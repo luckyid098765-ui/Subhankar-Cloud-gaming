@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: shubhankar_cloud
+      POSTGRES_USER: shubhankar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-shubhankar_dev_pw}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ../database/migrations:/docker-entrypoint-initdb.d
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  backend:
+    build: ../backend
+    environment:
+      PORT: 4000
+      DATABASE_URL: postgresql://shubhankar:${POSTGRES_PASSWORD:-shubhankar_dev_pw}@postgres:5432/shubhankar_cloud
+      REDIS_URL: redis://redis:6379
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:-change_me_access_secret_64_chars}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change_me_refresh_secret_64_chars}
+      HOST_AGENT_SECRET: ${HOST_AGENT_SECRET:-change_me_host_agent_secret}
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+      - redis
+
+  coturn:
+    image: coturn/coturn:latest
+    network_mode: host
+    volumes:
+      - ./coturn/turnserver.conf:/etc/coturn/turnserver.conf:ro
+
+volumes:
+  pg_data:

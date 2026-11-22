@@ -1,0 +1,72 @@
+:root {
+  color-scheme: dark;
+  --bg-obsidian: #070510;
+  --bg-surface: #120d24;
+  --bg-elevated: #1b1436;
+  --border-violet: #362763;
+  --neon-cyan: #00e5ff;
+  --electric-purple: #9d4edd;
+  --emerald: #00f59b;
+  --crimson: #ff4d6d;
+  --text-main: #f5f3ff;
+  --text-muted: #b5acda;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top right, #1d103b 0%, var(--bg-obsidian) 55%);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.layout { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 250px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-violet);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.brand { font-weight: 800; letter-spacing: 0.5px; color: var(--neon-cyan); margin-bottom: 16px; }
+.nav-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--text-muted);
+  border: 1px solid transparent; border-radius: 10px;
+  padding: 10px 12px; cursor: pointer; text-align: left; font-size: 14px;
+}
+.nav-btn.active {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: rgba(0, 229, 255, 0.45);
+  color: var(--neon-cyan);
+}
+.main { flex: 1; padding: 28px; overflow-y: auto; }
+.grid-kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 24px; }
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-violet);
+  border-radius: 16px;
+  padding: 18px;
+}
+.kpi-val { font-size: 28px; font-weight: 700; color: var(--neon-cyan); margin-top: 6px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border-violet); text-align: left; font-size: 13px; }
+th { color: var(--text-muted); font-weight: 600; }
+input, select, textarea {
+  background: var(--bg-obsidian); color: var(--text-main);
+  border: 1px solid var(--border-violet); border-radius: 10px;
+  padding: 9px 12px; width: 100%; margin-bottom: 10px;
+}
+.btn {
+  background: var(--neon-cyan); color: var(--bg-obsidian);
+  border: none; border-radius: 10px; padding: 9px 14px;
+  font-weight: 700; cursor: pointer;
+}
+.btn-danger { background: var(--crimson); color: #fff; }
+.btn-purple { background: var(--electric-purple); color: #fff; }
+.badge { padding: 3px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+.badge-online { background: rgba(0, 245, 155, 0.18); color: var(--emerald); }
+.badge-offline { background: rgba(255, 77, 109, 0.2); color: var(--crimson); }

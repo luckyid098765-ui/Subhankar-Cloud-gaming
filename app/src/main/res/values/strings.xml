@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Shubhankar Cloud</string>
+    <string name="brand_full_name">Shubhankar Cloud Gaming</string>
+    <string name="brand_tagline">RTX Cloud PCs on Your Android</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_library">Library</string>
+    <string name="nav_wallet">Wallet</string>
+    <string name="nav_history">History</string>
+    <string name="nav_profile">Profile</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_register">Create Account</string>
+    <string name="action_google_sign_in">Continue with Google</string>
+    <string name="action_start_game">Start Game</string>
+    <string name="action_claim_daily">Claim 20 Daily Coins</string>
+    <string name="coin_rate_one_hour">10 Coins = 1 Hour</string>
+    <string name="coin_rate_two_hours">20 Coins = 2 Hours</string>
+    <string name="charging_policy_summary">Coins are reserved upfront for your selected session duration (10 coins/hr) and unused full-minute blocks are reconciled upon exit. Negative balances are strictly blocked.</string>
+    <string name="empty_games_title">No Licensed Games Synced</string>
+    <string name="empty_games_subtitle">Connect to your Shubhankar Cloud Gaming backend in Settings or retry sync to load licensed titles installed on active GPU nodes.</string>
+    <string name="empty_history_title">No Gaming Sessions Yet</string>
+    <string name="empty_history_subtitle">Launch a licensed PC title from the library to record live cloud rig telemetry and session history.</string>
+    <string name="error_network_unavailable">Unable to reach cloud gaming server. Verify your Backend URL in Settings.</string>
+    <string name="content_desc_app_logo">Shubhankar Cloud Gaming emblem</string>
+    <string name="content_desc_hero_banner">Cloud GPU gaming server command banner</string>
+    <string name="content_desc_empty_sessions">No active gaming sessions illustration</string>
+    <string name="content_desc_support_banner">Cloud support telemetry banner</string>
+</resources>

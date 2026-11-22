@@ -1,0 +1,6 @@
+{
+  "name": "Shubhankar Cloud",
+  "description": "Shubhankar Cloud Gaming — Stream licensed PC games from GPU-powered cloud machines to Android via low-latency WebRTC with customizable touch and gamepad controls and a daily coin economy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
